@@ -1,16 +1,3 @@
-// import js from "@eslint/js";
-// import globals from "globals";
-// import tseslint from "typescript-eslint";
-// import pluginReact from "eslint-plugin-react";
-// import { defineConfig } from "eslint/config";
-
-// export default defineConfig([
-//   { files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"], plugins: { js }, extends: ["js/recommended"] },
-//   { files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"], languageOptions: { globals: globals.browser } },
-//   tseslint.configs.recommended,
-//   pluginReact.configs.flat.recommended,
-// ]);
-
 import eslint from '@eslint/js'
 import prettier from 'eslint-config-prettier'
 import reactHooks from 'eslint-plugin-react-hooks'
@@ -60,5 +47,16 @@ export default [
     rules: {
       ...reactHooks.configs.recommended.rules,
     },
+  },
+  {
+    // Note: there should be no other properties in this object
+    ignores: [
+      'node_modules/**/*',
+      'dist',
+      '*.html',
+      '.env*.local',
+      'vite-env.d.ts',
+      '.DS_Store',
+    ],
   },
 ]
