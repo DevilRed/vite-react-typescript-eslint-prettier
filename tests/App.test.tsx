@@ -1,7 +1,7 @@
-import { render, screen, cleanup } from '@testing-library/react'
+import { cleanup, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
-import App from './App'
+import App from '../src/App'
 
 describe('Renders main page correctly', () => {
   afterEach(() => {
